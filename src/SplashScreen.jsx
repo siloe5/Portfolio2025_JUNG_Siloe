@@ -17,7 +17,7 @@ export default function SplashScreen({ onEnter }) {
   };
 
   return (
-    <div className="splashscreen" onClick={handleClick}>
+    <div className="splashscreen" >
       {!ended && (
         <video
           src="video/Intro.mp4"
