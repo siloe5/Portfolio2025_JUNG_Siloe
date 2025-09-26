@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SplashScreen from "./components/SplashScreen"; 
+import SplashScreen from "./SplashScreen"; 
 import Desktop from "./Desktop"; 
 
 const App = () => {
