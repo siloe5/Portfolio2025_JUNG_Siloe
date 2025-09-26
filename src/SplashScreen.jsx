@@ -17,7 +17,7 @@ export default function SplashScreen({ onEnter }) {
   };
 
   return (
-    <div className="splashscreen" >
+    <div className="splashscreen" onClick={handleClick}>
       {!ended && (
         <video
           src="video/Intro.mp4"
@@ -26,12 +26,6 @@ export default function SplashScreen({ onEnter }) {
           playsInline
           onEnded={handleEnd}
         />
-      )}
-      {/* Optionnel : bouton Skip */}
-      {!ended && (
-        <button className="skip-btn" onClick={handleClick}>
-          Skip
-        </button>
       )}
     </div>
   );
