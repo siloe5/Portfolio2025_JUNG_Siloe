@@ -1,0 +1,25 @@
+.folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 80px;
+  transition: transform 0.2s;
+}
+
+.folder img {
+  width: 64px; /* équivalent w-16 */
+  height: 64px; /* équivalent h-16 */
+  object-fit: contain;
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.folder span {
+  color: white;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.folder:hover {
+  transform: scale(1.1);
+}

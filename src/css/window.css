@@ -1,0 +1,74 @@
+.window-container {
+  background-color: #e0e0e0;
+  border: 2px solid #4b4b4b;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;          /* limite pour éviter que ça dépasse l’écran */
+  width: auto;   
+}
+
+.window-content {
+  overflow: auto;        /* scroll si besoin */
+  background-color: white;
+  padding: 0.5rem;
+  border-top: 2px solid #454964;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  background-color: #454964; /* bleu rétro */
+  padding: 0.25rem 0.5rem;
+}
+
+.window-header h2 {
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.window-header button {
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.25rem;
+  background-color: #cc0000; /* rouge fermeture */
+  border: 1px solid #787d9c;
+}
+
+.window-header button:hover {
+  background-color: #aa0000;
+}
+
+.window-wrapper {
+  position: absolute; /* sort du flux */
+  z-index: 100;       /* passe au-dessus du perso */
+}
+
+.doc-image {
+  max-width: 800px;
+  max-height: auto;
+  object-fit: contain; /* garde les proportions */
+  display: block;
+}
+.doc-imageportrait {
+  max-width: auto;
+  max-height: 650px;
+  object-fit: contain; /* garde les proportions */
+  display: block;
+}
+
+.doc-imagepdf {    /* occupe toute la largeur disponible */
+  width: 800px;  /* limite largeur si besoin */
+  height: 600px;     /* hauteur fixe */
+  border: none;      /* supprime les bordures de l'iframe */
+  display: block;
+  margin: 0 auto; 
+}
+
+
+
+
