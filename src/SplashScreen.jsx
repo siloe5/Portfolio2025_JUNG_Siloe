@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./css/splashScreen.css";
+import "./css/splashscreen.css";
 
 export default function SplashScreen({ onEnter }) {
   const [ended, setEnded] = useState(false);
