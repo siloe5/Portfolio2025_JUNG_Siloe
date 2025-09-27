@@ -3,8 +3,8 @@ import "./css/window.css";
 
 export default function Window({ title, onClose, children }) {
   // Taille et position initiales sur desktop
-  const defaultWidth = 700;   // largeur initiale en px
-  const defaultHeight = 500;  // hauteur initiale en px
+  const defaultWidth = 820;   // largeur initiale en px
+  const defaultHeight = 620;  // hauteur initiale en px
   const defaultX = 300;       // position X initiale
   const defaultY = 120;       // position Y initiale
 
