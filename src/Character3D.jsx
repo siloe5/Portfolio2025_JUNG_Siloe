@@ -30,7 +30,7 @@ export default function CharacterVideo() {
         "Je cherche un stage de 3 mois!",
         "Hésite pas à regarder mon cv ou mon book!",
         "Tu reste encore un peu?",
-        "On dance tout ca tout ca"
+        "On danse tout ca tout ca"
     ];
 
     // Messages auto

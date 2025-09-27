@@ -21,19 +21,18 @@
   width: auto;
   height: auto;
   object-fit: contain;
+  margin-top: auto;
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .splashscreen {
-    align-items: flex-end; /* pousse la vidéo en bas */
-  }
 
   .splashscreen video {
     width: 100%;
     height: auto;
     max-height: 40vh; /* limite la hauteur à 40% de l’écran */
-    margin-bottom: 0rem; /* petit espace avec le bas */
+    margin-bottom: 0;
+    margin-top: auto; /* petit espace avec le bas */
   }
 }
 
