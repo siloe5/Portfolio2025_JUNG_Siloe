@@ -30,17 +30,14 @@
   .splashscreen video {
     width: 100%;
     height: auto;
-    max-height: 40vh; /* limite la hauteur à 40% de l’écran */
+    max-height: 70vh; /* limite la hauteur à 70% de l’écran */
     margin-bottom: 0;
-    margin-top: auto; /* petit espace avec le bas */
+    margin-top: auto; 
   }
 }
 
 /* ---------- 📲 Tablette ---------- */
 @media (min-width: 601px) and (max-width: 1024px) {
- .splashscreen {
-    align-items: flex-end; /* pousse la vidéo en bas */
-  }
 
   .splashscreen video {
     width: 100%;

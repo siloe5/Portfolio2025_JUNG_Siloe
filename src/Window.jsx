@@ -26,13 +26,19 @@ export default function Window({ title, onClose, children }) {
       minHeight={150}
       dragHandleClassName="window-header"
       bounds="parent"
-      cancel=".window-header button" //
+      
+      
     >
       <div className="window-container">
         {/* Header */}
         <div className="window-header">
           <h2>{title}</h2>
-           <button onClick={onClose}>X</button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();  // empêche le drag d’interférer
+              onClose();
+            }}
+          >X</button>
         </div>
 
         {/* Contenu */}

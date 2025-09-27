@@ -56,13 +56,15 @@
 }
 
 .doc-imageportrait {
-  width: auto;        /* largeur s’adapte à la hauteur */
-  max-width: 400px;   /* limite sur grand écran */
-  height: 580px;      /* hauteur portrait */
-  object-fit: contain; 
+  width: auto;        /* largeur proportionnelle à la hauteur */
+  max-width: 600px;   /* augmente la largeur maximale */
+  height: auto;       /* hauteur calculée automatiquement */
+  max-height: 620px;  /* augmente la hauteur maximale */
+  object-fit: contain; /* garde les proportions */
   display: block;
   margin: 0 auto;     /* centre horizontalement */
 }
+
 
 .doc-imagepdf {    /* occupe toute la largeur disponible */
   width: 800px;  /* limite largeur si besoin */

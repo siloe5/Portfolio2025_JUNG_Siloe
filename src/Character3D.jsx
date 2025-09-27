@@ -11,6 +11,7 @@ export default function CharacterVideo() {
         "Tu regardes tous mes projets hein?",
         "😎",
         "T'as regardé mes réseaux?",
+        "N'hésitez pas à vous perdre dans tous ces onglets..."
     ];
 
     const videos = [
