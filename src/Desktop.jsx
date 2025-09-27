@@ -6,6 +6,7 @@ import Character3D from "./Character3D";
 
 export default function Desktop({ autoOpen }) {
   const [windows, setWindows] = useState([]);
+  
 
   // Fonction pour ouvrir une nouvelle fenêtre
   const openWindow = (type) => {
@@ -78,8 +79,8 @@ export default function Desktop({ autoOpen }) {
         ),
       x: 100,
       y: 100,
-      width: 600,
-      height: 400,
+        width: type === "cv" ? "auto" : 600,   // <-- auto pour CV
+  height: type === "cv" ? "auto" : 400,  // <-- auto pour CV
     };
 
     setWindows((prev) => [...prev, newWindow]);

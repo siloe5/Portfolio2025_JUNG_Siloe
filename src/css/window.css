@@ -4,18 +4,16 @@
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  width: auto;
-  max-width: 90vw;   /* empêche de dépasser la largeur de l’écran */
-  max-height: 90vh;  /* idem pour la hauteur */
+  height: fit-content;          /* limite pour éviter que ça dépasse l’écran */
+  width: fit-content;   
+  
 }
 
 .window-content {
-  overflow: auto;
+  overflow: auto;        /* scroll si besoin */
   background-color: white;
   padding: 0.5rem;
   border-top: 2px solid #454964;
-  max-height: 80vh;   /* scroll interne si trop grand */
 }
 
 .window-header {
@@ -23,14 +21,14 @@
   justify-content: space-between;
   align-items: center;
   cursor: move;
-  background-color: #454964;
+  background-color: #454964; /* bleu rétro */
   padding: 0.25rem 0.5rem;
 }
 
 .window-header h2 {
   color: white;
   font-weight: bold;
-  font-size: clamp(0.75rem, 2vw, 0.875rem); /* adaptatif */
+  font-size: 0.875rem;
 }
 
 .window-header button {
@@ -38,9 +36,8 @@
   font-weight: bold;
   font-size: 0.75rem;
   padding: 0.1rem 0.25rem;
-  background-color: #cc0000;
+  background-color: #cc0000; /* rouge fermeture */
   border: 1px solid #787d9c;
-  cursor: pointer;
 }
 
 .window-header button:hover {
@@ -48,30 +45,32 @@
 }
 
 .window-wrapper {
-  position: absolute;
-  top: 50%;               /* centre vertical */
-  left: 50%;              /* centre horizontal */
-  transform: translate(-50%, -50%); /* corrige le centrage */
-  z-index: 100;
-  max-width: 95vw;        /* jamais plus large que l’écran */
-  max-height: 90vh;
-}
-/* Images */
-.doc-image,
-.doc-imageportrait,
-.doc-imagepdf {
-  width: 100%;         /* occupe toute la largeur dispo */
-  height: auto;
-  max-width: 800px;    /* limite sur grand écran */
-  margin: 0 auto;
-  display: block;
-  object-fit: contain;
-  border: none;
+  position: absolute; /* sort du flux */
+  z-index: 100;       /* passe au-dessus du perso */
 }
 
-/* PDF iframe */
-.doc-imagepdf {
-  height: 60vh;        /* s’adapte à la hauteur écran */
+.doc-image {
+  max-width: 800px;
+  max-height: auto;
+  object-fit: contain; /* garde les proportions */
+  display: block;
+}
+
+.doc-imageportrait {
+  width: auto;        /* largeur s’adapte à la hauteur */
+  max-width: 400px;   /* limite sur grand écran */
+  height: 600px;      /* hauteur portrait */
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto;     /* centre horizontalement */
+}
+
+.doc-imagepdf {    /* occupe toute la largeur disponible */
+  width: 800px;  /* limite largeur si besoin */
+  height: 600px;     /* hauteur fixe */
+  border: none;      /* supprime les bordures de l'iframe */
+  display: block;
+  margin: 0 auto; 
 }
 
 /* ---------- 📱 Mobile ---------- */
