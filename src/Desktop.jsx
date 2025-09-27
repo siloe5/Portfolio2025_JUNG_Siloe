@@ -70,7 +70,7 @@ export default function Desktop({ autoOpen, showCharacter }) {
                 <img src="/images/reseaux-02.png" alt="Behance" className="img-contact" />
               </a>
 
-              <a href="mailto:siloejung@gmail.com">
+              <a href="mailto:jungsiloe@gmail.com">
                 <img src="/images/reseaux-03.png" alt="Mail" className="img-contact" />
               </a>
             </div>

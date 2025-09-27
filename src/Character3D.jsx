@@ -11,7 +11,6 @@ export default function CharacterVideo() {
         "Tu regardes tous mes projets hein?",
         "😎",
         "T'as regardé mes réseaux?",
-        "Je cherche un stage d'avril à juillet!"
     ];
 
     const videos = [
@@ -31,7 +30,7 @@ export default function CharacterVideo() {
         "Je cherche un stage de 3 mois!",
         "Hésite pas à regarder mon cv ou mon book!",
         "Tu reste encore un peu?",
-        "si tu lis ça tu peux aussi lire mon CV? ✨"
+        "On dance tout ca tout ca"
     ];
 
     // Messages auto
