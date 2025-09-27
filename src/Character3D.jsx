@@ -15,7 +15,6 @@ export default function CharacterVideo() {
     ];
 
     const videos = [
-        "/video/anim1.webm",
         "/video/anim2.webm",
         "/video/anim3.webm",
         "/video/anim4.webm",

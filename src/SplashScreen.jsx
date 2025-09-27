@@ -19,13 +19,10 @@ export default function SplashScreen({ onEnter }) {
   return (
     <div className="splashscreen" onClick={handleClick}>
       {!ended && (
-        <video
-          src="video/Intro.mp4"
-          autoPlay
-          muted
-          playsInline
-          onEnded={handleEnd}
-        />
+        <video autoPlay muted playsInline onEnded={handleEnd} className="splash-video">
+          <source src="/video/Intro.mp4" media="(min-width: 769px)" />
+          <source src="/images/essai.png" media="(max-width: 768px)" />
+        </video>
       )}
     </div>
   );

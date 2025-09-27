@@ -28,14 +28,13 @@ html, body, #root {
 .infos {
   display: flex;
 }
-.projets {
-  display: flex;
-}
 
 .desktop-folders {
   display: flex ;
   justify-content: space-between;
+  flex-wrap: wrap
 }
+
 
 /* --- Reset --- */
 @layer base {

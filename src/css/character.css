@@ -15,30 +15,14 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: none; /* la vidéo ne bloque pas les clics */
-}
-
-/* Boutons dans la bulle */
-.bubble-actions {
-  margin-top: 8px;
-  display: flex;
-  gap: 8px;
-}
-
-.btn-cv,
-.btn-book {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 13px;
-  cursor: pointer;
-  border: none;
+  pointer-events: none;
 }
 
 /* Bulle de dialogue */
 .speech-bubble {
   position: absolute;
   top: 20px;
-  left: 250px; /* se place à droite du perso */
+  left: 250px; /* par défaut: à droite du perso */
   max-width: 400px;
   background: white;
   color: #454964;
@@ -50,4 +34,37 @@
 }
 
 
+/* --------- 📲 Tablette --------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .character-wrapper {
+    width: 320px;
+    height: 300px;
+  }
 
+  .speech-bubble {
+    left: 200px; /* un peu plus proche */
+    max-width: 300px;
+    font-size: 13px;
+  }
+}
+/* --------- 📱 Mobile --------- */
+@media (max-width: 600px) {
+  .personne3D {
+    bottom: 0;
+    left: 20%;
+    transform: translateX(-50%); /* centré */
+  }
+
+  .character-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .speech-bubble {
+    top: -90px; /* au-dessus du perso */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 250px;
+    font-size: 12px;
+  }
+}

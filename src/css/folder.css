@@ -3,23 +3,81 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  width: 80px;
+  width: clamp(60px, 8vw, 90px); /* adaptatif selon écran */
   transition: transform 0.2s;
 }
 
 .folder img {
-  width: 64px; /* équivalent w-16 */
-  height: 64px; /* équivalent h-16 */
+  width: 80%;        /* prend la largeur du conteneur */
+  max-width: 64px;   /* limite max sur grand écran */
+  height: auto;      /* garde proportions */
   object-fit: contain;
-  margin-bottom: 0.25rem; /* mb-1 */
+  margin-bottom: 0.25rem;
 }
 
 .folder span {
   color: white;
-  font-size: 0.875rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem); /* texte adaptatif */
   text-align: center;
+  word-wrap: break-word; /* évite les débordements longs titres */
 }
 
 .folder:hover {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.projets {
+  display: flex;
+}
+
+/* --------- 📱 Mobile --------- */
+@media (max-width: 600px) {
+  .folder {
+    width: 60px;
+  }
+
+  .folder img {
+    max-width: 48px;
+  }
+
+  .folder span {
+    font-size: 0.75rem;
+  }
+  
+  .projets {
+    display: grid; /* Mobile : grille */
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  }
+  .folder:hover {
+  transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  -o-transform: scale(1.0);
+}
+
+}
+
+/* --------- 📲 Tablette --------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .folder {
+    width: 70px;
+  }
+
+  .folder img {
+    max-width: 56px;
+  }
+
+  .folder span {
+    font-size: 0.8rem;
+  }
+  .projets {
+    display: grid; /* Tablette : grille */
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    
+  }
 }
