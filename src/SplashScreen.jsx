@@ -26,7 +26,7 @@ export default function SplashScreen({ onEnter }) {
       {!ended && (
         <>
           {isMobile ? (
-            <img src="/images/Introtel.jpg" alt="Splash mobile" className="splash-image" />
+            <img src="/images/Introtel.png" alt="Splash mobile" className="splash-image" />
           ) : (
             <video autoPlay muted playsInline onEnded={handleEnd} className="splash-video">
               <source src="/video/Intro.mp4" type="video/mp4" />

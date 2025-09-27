@@ -89,6 +89,11 @@
     height: 50vh;
   }
   
+  .window-header button {
+  z-index: 10; /* doit être au-dessus */
+  touch-action: manipulation; /* aide sur mobile */
+}
+
 
 }
 /* ---------- 📲 Tablette ---------- */
@@ -101,5 +106,10 @@
   .doc-imagepdf {
     height: 55vh;
   }
+  .window-header button {
+  z-index: 10; /* doit être au-dessus */
+  touch-action: manipulation; /* aide sur mobile */
+}
+
  
 }
