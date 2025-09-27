@@ -25,10 +25,8 @@ export default function Window({ title, onClose, children }) {
       minWidth={200}          // ne pas devenir trop petit sur mobile
       minHeight={150}
       dragHandleClassName="window-header"
-      bounds="parent"
+     
       cancel=".window-header button"
-      
-      
     >
       <div className="window-container">
         {/* Header */}

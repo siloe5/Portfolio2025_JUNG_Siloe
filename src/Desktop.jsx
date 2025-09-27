@@ -6,12 +6,12 @@ import Character3D from "./Character3D";
 
 export default function Desktop({ autoOpen, showCharacter }) {
   const [windows, setWindows] = useState([]);
-  
+
 
   // Fonction pour ouvrir une nouvelle fenêtre
   const openWindow = (type) => {
     if (windows.some((w) => w.type === type)) return; // évite les doublons
-
+   
     const newWindow = {
       id: Date.now(),
       type,
@@ -79,8 +79,8 @@ export default function Desktop({ autoOpen, showCharacter }) {
         ),
       x: 100,
       y: 100,
-        width: type === "cv" ? "auto" : 600,   // <-- auto pour CV
-  height: type === "cv" ? "auto" : 400,  // <-- auto pour CV
+      width: type === "cv" ? "auto" : 600,   // <-- auto pour CV
+      height: type === "cv" ? "auto" : 400,  // <-- auto pour CV
     };
 
     setWindows((prev) => [...prev, newWindow]);
@@ -99,11 +99,11 @@ export default function Desktop({ autoOpen, showCharacter }) {
 
   return (
     <div className="desktop">
-      
+
 
       {/* Dossiers infos */}
       <div className="desktop-folders">
-         {showCharacter && <Character3D />}
+        {showCharacter && <Character3D />}
         <div className="infos">
           <Folder title="Qui suis-je" icon="/images/Moiicone.png" onClick={() => openWindow("quisuisje")} />
           <Folder title="Mon CV" icon="/images/IconeDossier2.png" onClick={() => openWindow("cv")} />
