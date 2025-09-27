@@ -4,9 +4,8 @@ import Folder from "./Folder";
 import Window from "./Window";
 import Character3D from "./Character3D";
 
-export default function Desktop({ autoOpen }) {
+export default function Desktop({ autoOpen, showCharacter }) {
   const [windows, setWindows] = useState([]);
-  
 
   // Fonction pour ouvrir une nouvelle fenêtre
   const openWindow = (type) => {
@@ -99,10 +98,11 @@ export default function Desktop({ autoOpen }) {
 
   return (
     <div className="desktop">
+      
 
       {/* Dossiers infos */}
       <div className="desktop-folders">
-        <Character3D />
+         {showCharacter && <Character3D />}
         <div className="infos">
           <Folder title="Qui suis-je" icon="/images/Moiicone.png" onClick={() => openWindow("quisuisje")} />
           <Folder title="Mon CV" icon="/images/IconeDossier2.png" onClick={() => openWindow("cv")} />
