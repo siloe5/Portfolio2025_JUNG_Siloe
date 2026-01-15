@@ -11,7 +11,7 @@ export default function Desktop({ autoOpen, showCharacter }) {
   // Fonction pour ouvrir une nouvelle fenêtre
   const openWindow = (type) => {
     if (windows.some((w) => w.type === type)) return; // évite les doublons
-   
+
     const newWindow = {
       id: Date.now(),
       type,
@@ -34,9 +34,15 @@ export default function Desktop({ autoOpen, showCharacter }) {
                         ? "Croquis"
                         : type === "calendrier"
                           ? "Calendrier"
-                          : type === "flyer"
-                            ? "Flyer réalité augmentée"
-                            : "Réseaux",
+                          : type === "jeuvid"
+                            ? "Jeu Vidéo"
+                            : type === "stage"
+                              ? "Rapport de Stage"
+                              : type === "The fool"
+                                ? "Fool"
+                                : type === "flyer"
+                                  ? "Flyer réalité augmentée"
+                                  : "Réseaux",
       content:
         type === "quisuisje" ? (
           <img src="/images/Kisuisje.jpg" className="doc-image" title="À propos" />
@@ -58,6 +64,12 @@ export default function Desktop({ autoOpen, showCharacter }) {
           <img src="/images/book202511.jpg" alt="Croquis" className="doc-image" />
         ) : type === "calendrier" ? (
           <img src="/images/book20256.jpg" alt="Calendrier" className="doc-image" />
+        ) : type === "jeuvid" ? (
+          <img src="/images/book202514.jpg" alt="Jeu Vidéo" className="doc-image" />
+           ) : type === "stage" ? (
+          <img src="/images/book202515.jpg" alt="Rapport de Stage" className="doc-image" />
+           ) : type === "fool" ? (
+          <img src="/images/book202513.jpg" alt="The fool" className="doc-image" />
         ) : type === "flyer" ? (
           <img src="/images/book202510.jpg" alt="Flyer réalité augmentée" className="doc-image" />
         ) : (
@@ -111,14 +123,18 @@ export default function Desktop({ autoOpen, showCharacter }) {
           <Folder title="Réseaux" icon="/images/partage.png" onClick={() => openWindow("reseaux")} />
         </div>
         <div className="projets">
+           <Folder title="Grape Girl" icon="/images/IconeDossier1.png" onClick={() => openWindow("grapegirl")} />
+          <Folder title="Jeu Vidéo" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuvid")} />
+           <Folder title="Rapport de Stage" icon="/images/IconeDossier1.png" onClick={() => openWindow("stage")} />
+            <Folder title="The fool" icon="/images/IconeDossier1.png" onClick={() => openWindow("fool")} />
+          <Folder title="Art'Zulejos" icon="/images/IconeDossier1.png" onClick={() => openWindow("artzulejos")} />
           <Folder title="Modélisation 3D" icon="/images/IconeDossier1.png" onClick={() => openWindow("modelisation3D")} />
           <Folder title="Fanzine" icon="/images/IconeDossier1.png" onClick={() => openWindow("fanzine")} />
           <Folder title="Jeu d'échec" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuechec")} />
           <Folder title="Croquis" icon="/images/IconeDossier1.png" onClick={() => openWindow("croquis")} />
           <Folder title="Calendrier" icon="/images/IconeDossier1.png" onClick={() => openWindow("calendrier")} />
           <Folder title="Flyer réalité augmentée" icon="/images/IconeDossier1.png" onClick={() => openWindow("flyer")} />
-          <Folder title="Grape Girl" icon="/images/IconeDossier1.png" onClick={() => openWindow("grapegirl")} />
-          <Folder title="Art'Zulejos" icon="/images/IconeDossier1.png" onClick={() => openWindow("artzulejos")} />
+         
         </div>
       </div>
 
