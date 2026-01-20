@@ -26,8 +26,6 @@ export default function Desktop({ autoOpen, showCharacter }) {
                 ? "Mon Book"
                 : type === "modelisation3D"
                   ? "Modélisation 3D"
-                  : type === "fanzine"
-                    ? "Fanzine"
                     : type === "jeuechec"
                       ? "Jeu d'échec"
                       : type === "croquis"
@@ -38,40 +36,54 @@ export default function Desktop({ autoOpen, showCharacter }) {
                             ? "Jeu Vidéo"
                             : type === "stage"
                               ? "Rapport de Stage"
-                              : type === "The fool"
+                              : type === "the fool"
                                 ? "Fool"
-                                : type === "flyer"
-                                  ? "Flyer réalité augmentée"
-                                  : "Réseaux",
+                                : type === "tron"
+                                  ? "Tron"
+                                  : type === "fanzine"
+                                    ? "Fanzine"
+                                    : type === "cartevoeux"
+                                      ? "Carte de Voeux"
+                                      : type === "trophée"
+                                        ? "Trophée"
+                                        : type === "flyer"
+                                          ? "Flyer réalité augmentée"
+                                          : "Réseaux",
       content:
         type === "quisuisje" ? (
           <img src="/images/Kisuisje.jpg" className="doc-image" title="À propos" />
         ) : type === "cv" ? (
           <img src="/images/CV_JUNG_Siloe.jpg" alt="CV JUNG Siloe" className="doc-imageportrait" />
         ) : type === "artzulejos" ? (
-          <img src="/images/book20259.jpg" alt="Art'Zulejos" className="doc-image" />
+          <img src="/images/bookimg11.jpg" alt="Art'Zulejos" className="doc-image" />
         ) : type === "grapegirl" ? (
-          <img src="/images/book20253.jpg" alt="Grape Girl" className="doc-image" />
+          <img src="/images/bookimg2.jpg" alt="Grape Girl" className="doc-image" />
         ) : type === "book" ? (
-          <iframe src="/images/book2025.pdf" className="doc-imagepdf" title="Book JUNG Siloe" />
-        ) : type === "modelisation3D" ? (
-          <img src="/images/book20255.jpg" alt="Modélisation 3D" className="doc-image" />
-        ) : type === "jeuechec" ? (
-          <img src="/images/book20258.jpg" alt="Jeu d'échec" className="doc-image" />
+          <iframe src="/images/Book.pdf" className="doc-imagepdf" title="Book JUNG Siloe" />
         ) : type === "fanzine" ? (
-          <img src="/images/book20257.jpg" alt="Fanzine" className="doc-image" />
+          <img src="/images/bookimg14.jpg" alt="Fanzine" className="doc-image" />
+        ) : type === "modelisation3D" ? (
+          <img src="/images/bookimg15.jpg" alt="Modélisation 3D" className="doc-image" />
+        ) : type === "jeuechec" ? (
+          <img src="/images/bookimg9.jpg" alt="Jeu d'échec" className="doc-image" />
         ) : type === "croquis" ? (
-          <img src="/images/book202511.jpg" alt="Croquis" className="doc-image" />
+          <img src="/images/bookimg13.jpg" alt="Croquis" className="doc-image" />
         ) : type === "calendrier" ? (
-          <img src="/images/book20256.jpg" alt="Calendrier" className="doc-image" />
+          <img src="/images/bookimg8.jpg" alt="Calendrier" className="doc-image" />
         ) : type === "jeuvid" ? (
-          <img src="/images/book202514.jpg" alt="Jeu Vidéo" className="doc-image" />
-           ) : type === "stage" ? (
-          <img src="/images/book202515.jpg" alt="Rapport de Stage" className="doc-image" />
-           ) : type === "fool" ? (
-          <img src="/images/book202513.jpg" alt="The fool" className="doc-image" />
+          <img src="/images/bookimg7.jpg" alt="Jeu Vidéo" className="doc-image" />
+        ) : type === "stage" ? (
+          <img src="/images/bookimg6.jpg" alt="Rapport de Stage" className="doc-image" />
+        ) : type === "fool" ? (
+          <img src="/images/bookimg4.jpg" alt="The fool" className="doc-image" />
+        ) : type === "tron" ? (
+          <img src="/images/bookimg5.jpg" alt="Tron" className="doc-image" />
+        ) : type === "trophée" ? (
+          <img src="/images/bookimg16.jpg" alt="Trophée" className="doc-image" />
+        ) : type === "cartevoeux" ? (
+          <img src="/images/bookimg10.jpg" alt="Carte de Voeux" className="doc-image" />
         ) : type === "flyer" ? (
-          <img src="/images/book202510.jpg" alt="Flyer réalité augmentée" className="doc-image" />
+          <img src="/images/bookimg12.jpg" alt="Flyer réalité augmentée" className="doc-image" />
         ) : (
           <div className="contact-window">
             <span>Mes réseaux</span>
@@ -123,34 +135,51 @@ export default function Desktop({ autoOpen, showCharacter }) {
           <Folder title="Réseaux" icon="/images/partage.png" onClick={() => openWindow("reseaux")} />
         </div>
         <div className="projets">
-           <Folder title="Grape Girl" icon="/images/IconeDossier1.png" onClick={() => openWindow("grapegirl")} />
-          <Folder title="Jeu Vidéo" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuvid")} />
-           <Folder title="Rapport de Stage" icon="/images/IconeDossier1.png" onClick={() => openWindow("stage")} />
+          <div className="côté">
+
+            <Folder title="Tron" icon="/images/IconeDossier1.png" onClick={() => openWindow("tron")} />
             <Folder title="The fool" icon="/images/IconeDossier1.png" onClick={() => openWindow("fool")} />
-          <Folder title="Art'Zulejos" icon="/images/IconeDossier1.png" onClick={() => openWindow("artzulejos")} />
-          <Folder title="Modélisation 3D" icon="/images/IconeDossier1.png" onClick={() => openWindow("modelisation3D")} />
-          <Folder title="Fanzine" icon="/images/IconeDossier1.png" onClick={() => openWindow("fanzine")} />
-          <Folder title="Jeu d'échec" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuechec")} />
-          <Folder title="Croquis" icon="/images/IconeDossier1.png" onClick={() => openWindow("croquis")} />
-          <Folder title="Calendrier" icon="/images/IconeDossier1.png" onClick={() => openWindow("calendrier")} />
-          <Folder title="Flyer réalité augmentée" icon="/images/IconeDossier1.png" onClick={() => openWindow("flyer")} />
-         
+            <Folder title="Grape Girl" icon="/images/IconeDossier1.png" onClick={() => openWindow("grapegirl")} />
+          </div>
+          <div className="côté">
+
+            <Folder title="Calendrier" icon="/images/IconeDossier1.png" onClick={() => openWindow("calendrier")} />
+            <Folder title="Flyer réalité augmentée" icon="/images/IconeDossier1.png" onClick={() => openWindow("flyer")} />
+            <Folder title="Carte de voeux" icon="/images/IconeDossier1.png" onClick={() => openWindow("cartevoeux")} />
+            <Folder title="Fanzine" icon="/images/IconeDossier1.png" onClick={() => openWindow("fanzine")} />
+          </div>
+          <div className="côté">
+
+            <Folder title="Trophée" icon="/images/IconeDossier1.png" onClick={() => openWindow("trophée")} />
+            <Folder title="Jeu d'échec" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuechec")} />
+          </div>
+          <div className="côté">
+
+            <Folder title="Jeu Vidéo" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuvid")} />
+            <Folder title="Rapport de Stage" icon="/images/IconeDossier1.png" onClick={() => openWindow("stage")} />
+            <Folder title="Art'Zulejos" icon="/images/IconeDossier1.png" onClick={() => openWindow("artzulejos")} />
+            <Folder title="Modélisation 3D" icon="/images/IconeDossier1.png" onClick={() => openWindow("modelisation3D")} />
+            <Folder title="Croquis" icon="/images/IconeDossier1.png" onClick={() => openWindow("croquis")} />
+          </div>
         </div>
+
       </div>
 
       {/* Fenêtres */}
-      {windows.map((w) => (
-        <Window
-          key={w.id}
-          title={w.title}
-          onClose={() => closeWindow(w.id)}
-          initialX={w.x}
-          initialWidth={w.width}
-          initialHeight={w.height}
-        >
-          {w.content}
-        </Window>
-      ))}
-    </div>
+      {
+        windows.map((w) => (
+          <Window
+            key={w.id}
+            title={w.title}
+            onClose={() => closeWindow(w.id)}
+            initialX={w.x}
+            initialWidth={w.width}
+            initialHeight={w.height}
+          >
+            {w.content}
+          </Window>
+        ))
+      }
+    </div >
   );
 }

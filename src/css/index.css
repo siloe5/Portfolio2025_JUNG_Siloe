@@ -35,6 +35,18 @@ html, body, #root {
   flex-wrap: wrap
 }
 
+.projets {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.côté {
+  display: flex;
+  padding: 0px 10px 15px 10px;
+  flex-direction: row-reverse;
+  
+}
 
 /* --- Reset --- */
 @layer base {
