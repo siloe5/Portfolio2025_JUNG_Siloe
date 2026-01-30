@@ -9,6 +9,13 @@
   
 }
 
+.doc-video {
+  width: auto;
+  height: 600px;
+  object-fit: contain; /* Garde les proportions sans déformer */
+  background: #000;    /* Fond noir si le ratio est vraiment étrange */
+}
+
 .window-content {
   overflow: auto;        /* scroll si besoin */
   background-color: white;

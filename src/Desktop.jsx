@@ -7,10 +7,82 @@ import Character3D from "./Character3D";
 export default function Desktop({ autoOpen, showCharacter }) {
   const [windows, setWindows] = useState([]);
 
+  const PROJECTS = {
+    tron: {
+      title: "Tron",
+      image: "/images/bookimg5.jpg",
+      video: "/video/Tron.mp4",
+    },
+    grapegirl: {
+      title: "Grape Girl",
+      image: "/images/bookimg2.jpg",
+      video: "/video/Grape.mp4", // optionnel
+    },
+    fool: {
+      title: "The Fool",
+      image: "/images/bookimg4.jpg",
+      video: "/video/Jester.mp4", // optionnel
+    },
+   flyer: {
+      title: "Flyer réalité augmenté",
+      image: "/images/bookimg12.jpg",
+      video: "/video/Tynaire.mp4", // optionnel
+    },
+  };
+const openWindow = (type) => {
+  const project = PROJECTS[type];
 
-  // Fonction pour ouvrir une nouvelle fenêtre
-  const openWindow = (type) => {
-    if (windows.some((w) => w.type === type)) return; // évite les doublons
+  // 🎯 CAS PROJET AVEC IMAGE (+ VIDÉO OPTIONNELLE)
+  if (project) {
+
+    // 🖼️ fenêtre image
+    if (!windows.some(w => w.type === `${type}-image`)) {
+      setWindows(prev => [
+        ...prev,
+        {
+          id: Date.now(),
+          type: `${type}-image`,
+          title: project.title,
+          content: (
+            <img src={project.image} className="doc-image" />
+          ),
+          x: 300,
+          y: 120,
+          width: 640,
+          height: 420,
+        }
+      ]);
+    }
+
+    // 🎥 fenêtre vidéo (plus petite + décalée)
+    if (project.video && !windows.some(w => w.type === `${type}-video`)) {
+      setWindows(prev => [
+        ...prev,
+        {
+          id: Date.now() + 1,
+          type: `${type}-video`,
+          title: `${project.title} — Vidéo`,
+          content: (
+            <video
+              src={project.video}
+              className="doc-video"
+              controls
+              playsInline
+            />
+          ),
+          x: 750,
+          y: 150,
+          width: 420,
+          height: 260,
+        }
+      ]);
+    }
+
+    return;
+  }
+
+  // ⬇️ ICI ton ancien code pour les autres fenêtres (cv, réseaux, etc.)
+
 
     const newWindow = {
       id: Date.now(),
@@ -26,29 +98,29 @@ export default function Desktop({ autoOpen, showCharacter }) {
                 ? "Mon Book"
                 : type === "modelisation3D"
                   ? "Modélisation 3D"
-                    : type === "jeuechec"
-                      ? "Jeu d'échec"
-                      : type === "croquis"
-                        ? "Croquis"
-                        : type === "calendrier"
-                          ? "Calendrier"
-                          : type === "jeuvid"
-                            ? "Jeu Vidéo"
-                            : type === "stage"
-                              ? "Rapport de Stage"
-                              : type === "the fool"
-                                ? "Fool"
-                                : type === "tron"
-                                  ? "Tron"
-                                  : type === "fanzine"
-                                    ? "Fanzine"
-                                    : type === "cartevoeux"
-                                      ? "Carte de Voeux"
-                                      : type === "trophée"
-                                        ? "Trophée"
-                                        : type === "flyer"
-                                          ? "Flyer réalité augmentée"
-                                          : "Réseaux",
+                  : type === "jeuechec"
+                    ? "Jeu d'échec"
+                    : type === "croquis"
+                      ? "Croquis"
+                      : type === "calendrier"
+                        ? "Calendrier"
+                        : type === "jeuvid"
+                          ? "Jeu Vidéo"
+                          : type === "stage"
+                            ? "Rapport de Stage"
+                            : type === "the fool"
+                              ? "Fool"
+                              : type === "tron"
+                                ? "Tron"
+                                : type === "fanzine"
+                                  ? "Fanzine"
+                                  : type === "cartevoeux"
+                                    ? "Carte de Voeux"
+                                    : type === "trophée"
+                                      ? "Trophée"
+                                      : type === "flyer"
+                                        ? "Flyer réalité augmentée"
+                                        : "Réseaux",
       content:
         type === "quisuisje" ? (
           <img src="/images/Kisuisje.jpg" className="doc-image" title="À propos" />
@@ -63,7 +135,7 @@ export default function Desktop({ autoOpen, showCharacter }) {
         ) : type === "fanzine" ? (
           <img src="/images/bookimg14.jpg" alt="Fanzine" className="doc-image" />
         ) : type === "modelisation3D" ? (
-          <img src="/images/bookimg15.jpg" alt="Modélisation 3D" className="doc-image" />
+          <img src="/images/bookimg15.jpg" alt="3D" className="doc-image" />
         ) : type === "jeuechec" ? (
           <img src="/images/bookimg9.jpg" alt="Jeu d'échec" className="doc-image" />
         ) : type === "croquis" ? (
@@ -78,6 +150,7 @@ export default function Desktop({ autoOpen, showCharacter }) {
           <img src="/images/bookimg4.jpg" alt="The fool" className="doc-image" />
         ) : type === "tron" ? (
           <img src="/images/bookimg5.jpg" alt="Tron" className="doc-image" />
+
         ) : type === "trophée" ? (
           <img src="/images/bookimg16.jpg" alt="Trophée" className="doc-image" />
         ) : type === "cartevoeux" ? (
@@ -101,8 +174,8 @@ export default function Desktop({ autoOpen, showCharacter }) {
             </div>
           </div>
         ),
-      x: 100,
-      y: 100,
+      x: 300,
+      y: 120,
       width: type === "cv" ? "auto" : 600,   // <-- auto pour CV
       height: type === "cv" ? "auto" : 400,  // <-- auto pour CV
     };
@@ -158,7 +231,7 @@ export default function Desktop({ autoOpen, showCharacter }) {
             <Folder title="Jeu Vidéo" icon="/images/IconeDossier1.png" onClick={() => openWindow("jeuvid")} />
             <Folder title="Rapport de Stage" icon="/images/IconeDossier1.png" onClick={() => openWindow("stage")} />
             <Folder title="Art'Zulejos" icon="/images/IconeDossier1.png" onClick={() => openWindow("artzulejos")} />
-            <Folder title="Modélisation 3D" icon="/images/IconeDossier1.png" onClick={() => openWindow("modelisation3D")} />
+            <Folder title="3D" icon="/images/IconeDossier1.png" onClick={() => openWindow("modelisation3D")} />
             <Folder title="Croquis" icon="/images/IconeDossier1.png" onClick={() => openWindow("croquis")} />
           </div>
         </div>
@@ -166,20 +239,21 @@ export default function Desktop({ autoOpen, showCharacter }) {
       </div>
 
       {/* Fenêtres */}
-      {
-        windows.map((w) => (
-          <Window
-            key={w.id}
-            title={w.title}
-            onClose={() => closeWindow(w.id)}
-            initialX={w.x}
-            initialWidth={w.width}
-            initialHeight={w.height}
-          >
-            {w.content}
-          </Window>
-        ))
-      }
+{windows.map((w) => (
+  <Window
+    key={w.id}
+    title={w.title}
+    onClose={() => closeWindow(w.id)}
+    initialX={w.x}      // X est bien là
+    initialY={w.y}      // <--- IL MANQUAIT CELUI-CI !
+    initialWidth={w.width}
+    initialHeight={w.height}
+    // Si tu as ajouté la classe pour le CV (voir étape précédente) :
+    customClass={w.type === 'cv' ? 'window-cv-style' : ''}
+  >
+    {w.content}
+  </Window>
+))}
     </div >
   );
 }
