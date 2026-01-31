@@ -23,10 +23,27 @@ export default function Desktop({ autoOpen, showCharacter }) {
       image: "/images/bookimg4.jpg",
       video: "/video/Jester.mp4", // optionnel
     },
-   flyer: {
+
+    flyer: {
       title: "Flyer réalité augmenté",
       image: "/images/bookimg12.jpg",
       video: "/video/Tynaire.mp4", // optionnel
+    },
+    stage: {
+      title: "Dataviz",
+      image: "/images/bookimg6.jpg",
+      video: "/video/Dataviz.mov", // optionnel
+    },
+
+   artzulejos: {
+      title: "Art'Zulejos",
+      image: "/images/bookimg11.jpg",
+      video: "/video/1b1f.mp4", // optionnel
+    },
+    cartevoeux: {
+      title: "Carte Voeux",
+      image: "/images/bookimg10.jpg",
+      video: "/video/CarteVoeux.mp4", // optionnel
     },
   };
 const openWindow = (type) => {
@@ -72,8 +89,9 @@ const openWindow = (type) => {
           ),
           x: 750,
           y: 150,
-          width: 420,
-          height: 260,
+          width: '80%',
+          height: '80%',
+          
         }
       ]);
     }
